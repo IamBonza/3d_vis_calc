@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Расчет стоимости 3d-визуализации</title>
+	<link rel="stylesheet" href="css/main.css" />
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,700&display=swap&subset=cyrillic-ext"
+		rel="stylesheet" />
+</head>
+
+<body>
+	<main class="calc-wrapper">
+		<div class="container">
+			<form id="form">
+				<div class="heading">
+					<h1 class="heading-title">Калькулятор 3d-визуализации</h1>
+					<p class="heading-desc"></p>
+				</div>
+
+				<!-- Стиль интерьера -->
+				<div class="calc-section">
+					<div>
+						<h4 class="checkbox-wrapper title-bold section-title">Стиль дизайна интерьера</h4>
+						<label class="radio-wrapper" data-name="mobile">
+							<input type="radio" class="radio radio-1" name="style" value="400" checked />
+							<div class="title-lite">
+								Минимализм, Скандинавский, Хайтек
+								<span class="note">Базовая цена: 1 м² = 400 рублей</span>
+							</div>
+						</label>
+						<label class="radio-wrapper" data-name="mobile">
+							<input type="radio" class="radio radio-2" name="style" value="450" />
+							<div class="title-lite">
+								Эклектика, Лофт
+								<span class="note">Базовая цена: 1 м² = 450 рублей</span>
+							</div>
+						</label>
+						<label class="radio-wrapper" data-name="mobile">
+							<input type="radio" class="radio radio-3" name="style" value="500" />
+							<div class="title-lite">
+								Классический, Английский, Прованс, Арт-Деко
+								<span class="note">Базовая цена: 1 м² = 500 рублей</span>
+							</div>
+						</label>
+					</div>
+					<div class="slider-wrapper">
+						<img src="./images/minimal.jpg" alt="style">
+					</div>
+				</div>
+				<!-- // Стиль интерьера  -->
+
+				<!-- Площадь -->
+				<div class="calc-section">
+					<label class="checkbox-wrapper title-bold section-title .section-title--vertical-center">
+						<span class="title__inline">Площадь квартиры:</span>
+						<input type="number" min="0" max="200" value="25" id="square-input"
+							class="title__inline input-short" />
+						<span class="title__inline">м²</span>
+					</label>
+					<input type="range" id="square-range" class="range-input" min="0" max="200" value="25" step="1" />
+				</div>
+				<!-- // Площадь -->
+
+
+
+
+
+				<!-- Стоимость визуализации -->
+				<div class="calc-price">
+					<div class="calc-price-title">Стоимость визуализации:</div>
+					<div class="calc-price-value">
+						<span id="total-price">0</span>
+						рублей
+					</div>
+				</div>
+				<!-- // Стоимость визуализации -->
+			</form>
+		</div>
+	</main>
+
+	<footer class="footer footer-inner">
+		<div class="container">
+			<p class="footer-text">Александра Генина <a href="mailto:alex3101kushnir@gmail.com"
+					target="_blank">alex3101kushnir@gmail.com</a></p>
+		</div>
+	</footer>
+
+	<script src="js/main.js"></script>
+</body>
+
+</html>
