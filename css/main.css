@@ -370,3 +370,7 @@ img {
 	width: 450px;
 	height: 350px;
 }
+
+.slider-wrapper .slick-arrow::before {
+	color: #5f858d;
+}

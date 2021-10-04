@@ -8,9 +8,9 @@ const rBstyle3 = document.querySelector('.radio-3');
 const rBbuilding = document.querySelectorAll("input[name='building']");
 const rBrooms = document.querySelectorAll("input[name='rooms']");
 const checkBoxs = document.querySelectorAll('input[type="checkbox"]');
+const allSliders = document.querySelectorAll('.slider-wrapper');
 let img = document.querySelector('img');
-console.log(img.attributes.src)
-console.log(rBstyle2)
+
 
 
 let basePrice = 400;
@@ -29,16 +29,26 @@ squareInput.addEventListener('input', () => {
 
 function calc() {
 
+    // allSliders.forEach(item => {
+    //     item.style.display = 'none';
+    // });
+
+    $('.slider-wrapper').css('display', 'none');
+
+
+
     if (rBstyle1.checked) {
-        img.attributes.src.value = './images/minimal.jpg';
+        document.querySelector('.slider-wrapper_1').style.display = 'block';
     }
 
     if (rBstyle2.checked) {
-        img.attributes.src.value = './images/loft.jpg';
+        document.querySelector('.slider-wrapper_2').style.display = 'block';
     }
     if (rBstyle3.checked) {
-        img.attributes.src.value = './images/classic.jpg';
+        document.querySelector('.slider-wrapper_3').style.display = 'block';
     }
+
+    $('.slider-wrapper:visible').slick('setPosition')
 
     for (let item of rBstyle) {
         if (item.checked) {
@@ -48,34 +58,12 @@ function calc() {
 
     let totalPrice = basePrice * +squareRange.value
 
-
-
-    // for (let item of rBtype) {
-    //     if (item.checked) {
-    //         totalPrice *= +item.value;
-    //     }
-    // }
-    // for (let item of rBbuilding) {
-    //     if (item.checked) {
-    //         totalPrice *= +item.value;
-    //     }
-    // }
-    // for (let item of rBrooms) {
-    //     if (item.checked) {
-    //         totalPrice *= +item.value;
-    //     }
-    // }
-    // for (let item of checkBoxs) {
-    //     if (item.checked) {
-    //         totalPrice *= +item.value;
-    //     }
-    // }
-
-
     const formatter = new Intl.NumberFormat('ru');
 
     totalPriceElement.innerText = formatter.format(totalPrice);
 }
+
+$('.slider-wrapper').slick();
 
 calc();
 
@@ -86,3 +74,5 @@ for (let item of inputs) {
 
     })
 }
+
+
